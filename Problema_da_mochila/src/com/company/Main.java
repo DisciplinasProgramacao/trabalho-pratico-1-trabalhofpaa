@@ -11,7 +11,7 @@ public class Main {
 
         Mochila mochila = new Mochila(items, 15 );
         mochila.exibir();
-        Solucao solution = mochila.resolver();
-        solution.exibir();
+        Solucao solutionBruteForce = mochila.resolverBruteForce();
+        solutionBruteForce.exibir();
     }
 }
