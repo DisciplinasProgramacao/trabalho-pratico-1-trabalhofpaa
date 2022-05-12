@@ -20,8 +20,8 @@ public class Mochila {
     public void exibir() {
         if (items != null  &&  items.length > 0) {
             System.out.println("Problema da Mochila");
-            System.out.println("capacidade : " + capacidade);
-            System.out.println("itens :");
+            System.out.println("Capacidade: " + capacidade);
+            System.out.println("Itens :");
 
             for (Item item : items) {
                 System.out.println("- " + item.toString());

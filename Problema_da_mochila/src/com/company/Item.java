@@ -34,15 +34,15 @@ public class Item {
 
     /**
      * @param capacidadeMochila       Tamnho da mochila (capacidade total).
-     * @param quantiadeItensAletorios Quantidade de itens aleatorios a serem gerados
+     * @param quantidadeItensAleatorios Quantidade de itens aleatorios a serem gerados
      * @return Um vetor com os itens aleatorios
      */
-    public Item[] geradorDeItens(int capacidadeMochila, int quantiadeItensAletorios) {
+    public Item[] geradorDeItens(int capacidadeMochila, int quantidadeItensAleatorios) {
         // Random gerador = new Random(19700621);
         Random gerador = new Random();
-        Item[] items = new Item[quantiadeItensAletorios];
+        Item[] items = new Item[quantidadeItensAleatorios];
 
-        for (int i = 0; i < quantiadeItensAletorios; i++) {
+        for (int i = 0; i < quantidadeItensAleatorios; i++) {
             items[i] = (new Item("Item: " + i+1, gerador.nextInt(capacidadeMochila*3) + 1,
                     gerador.nextInt(capacidadeMochila*3) +1));
         }
