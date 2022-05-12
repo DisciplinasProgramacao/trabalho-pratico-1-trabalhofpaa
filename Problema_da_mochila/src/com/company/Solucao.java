@@ -13,7 +13,6 @@ public class Solucao {
 
     public void exibir() {
         if (itens != null && !itens.isEmpty()){
-            System.out.println("\nSolução da Mochila");
             System.out.println("Valor = " + value);
             System.out.println("Itens para escolher :");
 

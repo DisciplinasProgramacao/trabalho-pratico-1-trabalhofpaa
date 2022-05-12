@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        int  capacidadeMochila = 15, quantidadeItensAleatorios = 20;
+        int  capacidadeMochila = 5, quantidadeItensAleatorios = 10;
 
         Item aleatorio = new Item();
         Item[] items =  aleatorio.geradorDeItens(capacidadeMochila, quantidadeItensAleatorios);
@@ -46,22 +46,28 @@ public class Main {
 
         mochila.exibir();
 
+        Item[] itemsBrute,itemsGreedy;
+        Mochila mochilaBrute,mochilaGreedy;
+
         System.out.println("2 - Teste automatizado:");
         for (int i = 0; i < 500; i++) {
-            Item[] itemsBrute = aleatorio.geradorDeItens(capacidadeMochila, itensBrute);
-            Item[] itemsGreedy = aleatorio.geradorDeItens(capacidadeMochila, itensGreedy);
-            Mochila mochilaBrute = new Mochila(itemsBrute, capacidadeMochila);
-            Mochila mochilaGreedy = new Mochila(itemsGreedy, capacidadeMochila);
+             itemsBrute = aleatorio.geradorDeItens(capacidadeMochila, itensBrute);
+            itemsGreedy = aleatorio.geradorDeItens(capacidadeMochila, itensGreedy);
+            //itemsGreedy = aleatorio.geradorDeItens(capacidadeMochila, 10);
+            mochilaGreedy = mochilaBrute = new Mochila(itemsBrute, capacidadeMochila);
+            //Mochila mochilaGreedy = new Mochila(itemsGreedy, capacidadeMochila);
             solutionBruteForce = mochilaBrute.resolverBruteForce();
             solutionGreedy = mochilaGreedy.resolverGreedy("valor");
-
-            if(solutionBruteForce == solutionGreedy){
-                System.out.println("Teste");
+          
+            if(solutionBruteForce.value == solutionGreedy.value &&  solutionGreedy.value != 0){
+                solutionBruteForce.exibir();
+                System.out.println("\n");
             }
 
         }
+        System.out.println("Fim da execucao");
     }
-
+        
     long tempoInicial = System.currentTimeMillis();
     long tempoFinal = System.currentTimeMillis() - tempoInicial;
 }
