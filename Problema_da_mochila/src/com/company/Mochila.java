@@ -33,11 +33,11 @@ public class Mochila {
         // Retorna um array de itens ordenado pelo valor decrescente
         List<Item> sortedList = new LinkedList<Item>(Arrays.asList(items.clone()));
         if(orderBy.equals("valor")) {
-            Collections.sort(sortedList, Comparator.comparingInt(Item::getValor));
+            Collections.sort(sortedList, Comparator.comparingInt(Item::getValor).reversed());
         } else if(orderBy.equals("peso")) {
             Collections.sort(sortedList, Comparator.comparingInt(Item::getPeso));
         } else if(orderBy.equals("valorPorPeso")) {
-            Collections.sort(sortedList, Comparator.comparingInt(Item::getValorPorPeso));
+            Collections.sort(sortedList, Comparator.comparingInt(Item::getValorPorPeso).reversed());
         }
         return sortedList;
     }
