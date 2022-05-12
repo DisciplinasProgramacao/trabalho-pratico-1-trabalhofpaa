@@ -43,8 +43,8 @@ public class Item {
         Item[] items = new Item[quantiadeItensAletorios];
 
         for (int i = 0; i < quantiadeItensAletorios; i++) {
-            items[i] = (new Item("Item: " + i+1, gerador.nextInt(capacidadeMochila) + 1,
-                    gerador.nextInt(capacidadeMochila) +1));
+            items[i] = (new Item("Item: " + i+1, gerador.nextInt(capacidadeMochila*3) + 1,
+                    gerador.nextInt(capacidadeMochila*3) +1));
         }
 
         return items;

@@ -7,7 +7,8 @@ public class Main {
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
 
-         int  capacidaeMochila = 15, quantidadeItensAleatorios = 25100000;
+       // int  capacidaeMochila = 15, quantidadeItensAleatorios = 25100000;
+        int  capacidaeMochila = 15, quantidadeItensAleatorios = 20;
 
         System.out.println("Menu");
         System.out.println("1-Quantidade de itens resolvidos em 4 segundos\n2-teste automatizado");
@@ -18,46 +19,46 @@ public class Main {
         Solucao solutionBruteForce;
         Solucao Greedy;
 
-//      switch (entrada.nextInt())
+        switch (entrada.nextInt())
 
-        switch (a)
+      //  switch (a)
         {
             case  1:
-                long tempoInicial = System.currentTimeMillis();
-                solutionBruteForce = mochila.resolverBruteForce();
-                long tempoFinal = System.currentTimeMillis() -tempoInicial;
-                System.out.println("O 'BruteForce' consegiu resolver " + quantidadeItensAleatorios + " itens dentro de " + tempoFinal/1000 + "  segundos");
-
-                tempoInicial = System.currentTimeMillis();
-                solutionBruteForce = mochila.resolverBruteForce();
-                tempoFinal = System.currentTimeMillis() -tempoInicial;
-                System.out.println("O 'Greedy' consegiu resolver " + quantidadeItensAleatorios + " itens dentro de " + tempoFinal/1000 + "  segundos");
-
 //                long tempoInicial = System.currentTimeMillis();
-//                long tempoFinal = 0;
-//                int quantidadeExecucaoes =0;
-//
-//                while (tempoFinal < 4000)
-//                {
-//                    solutionBruteForce = mochila.resolverBruteForce();
-//                    tempoFinal = System.currentTimeMillis() -tempoInicial;
-//                    quantidadeExecucaoes++;
-//                }
-//
-//                System.out.println("A mochila executou " + quantidadeExecucaoes +" vezes utilizando o 'BruteForce' e consegiu resolver " + quantidadeExecucaoes * quantidadeItensAleatorios + " itens dentro de 4 segundos");
+//                solutionBruteForce = mochila.resolverBruteForce();
+//                long tempoFinal = System.currentTimeMillis() -tempoInicial;
+//                System.out.println("O 'BruteForce' consegiu resolver " + quantidadeItensAleatorios + " itens dentro de " + tempoFinal/1000 + "  segundos");
 //
 //                tempoInicial = System.currentTimeMillis();
-//                tempoFinal = 0;
-//                quantidadeExecucaoes = 0;
-//
-//                while (tempoFinal < 4000)
-//                {
-//                    Greedy = mochila.resolverGreedy("valor");
-//                    tempoFinal = System.currentTimeMillis() -tempoInicial;
-//                    quantidadeExecucaoes++;
-//                }
-//
-//                System.out.println("A mochila executou " + quantidadeExecucaoes +" vezes utilizando o 'Greedy' consegiu e resolver: " + quantidadeExecucaoes * quantidadeItensAleatorios + " itens dentro de 4 segundos");
+//                solutionBruteForce = mochila.resolverBruteForce();
+//                tempoFinal = System.currentTimeMillis() -tempoInicial;
+//                System.out.println("O 'Greedy' consegiu resolver " + quantidadeItensAleatorios + " itens dentro de " + tempoFinal/1000 + "  segundos");
+
+                long tempoInicial = System.currentTimeMillis();
+                long tempoFinal = 0;
+                int quantidadeExecucaoes =0;
+
+                while (tempoFinal < 4000)
+                {
+                    solutionBruteForce = mochila.resolverBruteForce();
+                    tempoFinal = System.currentTimeMillis() -tempoInicial;
+                    quantidadeExecucaoes++;
+                }
+
+                System.out.println("A mochila executou " + quantidadeExecucaoes +" vezes utilizando o 'BruteForce' e consegiu resolver " + quantidadeExecucaoes * quantidadeItensAleatorios + " itens dentro de 4 segundos");
+
+                tempoInicial = System.currentTimeMillis();
+                tempoFinal = 0;
+                quantidadeExecucaoes = 0;
+
+                while (tempoFinal < 4000)
+                {
+                    Greedy = mochila.resolverGreedy("valor");
+                    tempoFinal = System.currentTimeMillis() -tempoInicial;
+                    quantidadeExecucaoes++;
+                }
+
+                System.out.println("A mochila executou " + quantidadeExecucaoes +" vezes utilizando o 'Greedy' consegiu e resolver: " + quantidadeExecucaoes * quantidadeItensAleatorios + " itens dentro de 4 segundos");
                 break;
             case  2:
                 for (int i = 0; i < 500; i++) {
@@ -69,7 +70,7 @@ public class Main {
                 break;
 
         }
-       // mochila.exibir();
+        mochila.exibir();
 
         long tempoInicial = System.currentTimeMillis();
 
