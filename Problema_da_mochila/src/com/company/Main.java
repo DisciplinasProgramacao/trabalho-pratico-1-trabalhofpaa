@@ -9,8 +9,9 @@ public class Main {
         Item aleatorio = new Item();
         Item[] items =  aleatorio.geradorDeItens(capacidadeMochila, quantidadeItensAleatorios);
         Mochila mochila = new Mochila(items, capacidadeMochila);
+
         Solucao solutionBruteForce;
-        Solucao Greedy;
+        Solucao solutionGreedy;
 
         int qtdExecucoesBrute = 0;
         int itensBrute = 0;
@@ -35,7 +36,7 @@ public class Main {
         tempoFinal = 0;
 
         while (tempoFinal < 4000){
-            Greedy = mochila.resolverGreedy("valor");
+            solutionGreedy = mochila.resolverGreedy("valor");
             tempoFinal = System.currentTimeMillis() - tempoInicial;
             qtdExecucoesGreedy++;
         }
@@ -43,10 +44,21 @@ public class Main {
         System.out.println("A mochila executou " + qtdExecucoesGreedy +" vezes utilizando o 'Greedy' consegiu e resolver: " + itensGreedy + " itens dentro de 4 segundos");
         System.out.println();
 
+        mochila.exibir();
+
         System.out.println("2 - Teste automatizado:");
         for (int i = 0; i < 500; i++) {
-            aleatorio.geradorDeItens(capacidadeMochila, itensBrute);
-            aleatorio.geradorDeItens(capacidadeMochila, itensGreedy);
+            Item[] itemsBrute = aleatorio.geradorDeItens(capacidadeMochila, itensBrute);
+            Item[] itemsGreedy = aleatorio.geradorDeItens(capacidadeMochila, itensGreedy);
+            Mochila mochilaBrute = new Mochila(itemsBrute, capacidadeMochila);
+            Mochila mochilaGreedy = new Mochila(itemsGreedy, capacidadeMochila);
+            solutionBruteForce = mochilaBrute.resolverBruteForce();
+            solutionGreedy = mochilaGreedy.resolverGreedy("valor");
+
+            if(solutionBruteForce == solutionGreedy){
+                System.out.println("Teste");
+            }
+
         }
     }
 

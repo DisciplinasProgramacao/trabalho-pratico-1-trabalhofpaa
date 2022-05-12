@@ -42,10 +42,8 @@ public class Mochila {
         return sortedList;
     }
 
-
     public Solucao resolverBruteForce() {
         // Solução com força bruta
-
         int numItens = items.length;
         int[][] matriz = new int[numItens + 1][capacidade + 1];
 
