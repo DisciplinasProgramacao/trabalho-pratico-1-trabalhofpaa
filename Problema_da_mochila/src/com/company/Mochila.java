@@ -87,8 +87,8 @@ public class Mochila {
         int totalValor = 0;
         Item currentItem = itemList.get(0);
         while(currentPeso + currentItem.getPeso() <= this.capacidade) {
-            resultList.add(currentItem);
-            itemList.remove(0);
+            resultList.add(currentItem);            //itemList.remove(0);
+            itemList = itemList.subList(1,itemList.size());
             currentPeso += currentItem.getPeso();
             totalValor += currentItem.getValor();
             if(!itemList.isEmpty()) {

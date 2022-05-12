@@ -1,17 +1,28 @@
 package com.company;
 
+
 public class Main {
 
     public static void main(String[] args) {
-        Item[] items = {new Item("A1", 4, 12),
-                new Item("B2", 2, 1),
-                new Item("C3", 2, 2),
-                new Item("D4", 1, 1),
-                new Item("E5", 10, 4)};
 
-        Mochila mochila = new Mochila(items, 15 );
-        mochila.exibir();
-        Solucao solutionBruteForce = mochila.resolverBruteForce();
-        solutionBruteForce.exibir();
+        int  capacidaeMochila = 15, quantidadeItensAleatorios = 3000000;
+         //int  capacidaeMochila = 15, quantidadeItensAleatorios = 3000000;
+
+        Item aleatorio = new Item();
+        Item[] items =  aleatorio.geradorDeItens(capacidaeMochila,quantidadeItensAleatorios);
+
+        Mochila mochila = new Mochila(items, capacidaeMochila);
+        //mochila.exibir();
+
+        long tempoInicial = System.currentTimeMillis();
+        //Solucao solutionBruteForce = mochila.resolverBruteForce();
+        Solucao Greedy = mochila.resolverGreedy("peso");
+        long tempoFinal = System.currentTimeMillis() -tempoInicial;
+//        System.out.println((tempoFinal /60));
+//        System.out.println("\nForca bruta");
+//        //solutionBruteForce.exibir();
+//        System.out.println("\nGreedy");
+//        Greedy.exibir();
+
     }
 }
