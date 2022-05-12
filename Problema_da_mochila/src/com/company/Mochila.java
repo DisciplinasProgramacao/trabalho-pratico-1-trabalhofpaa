@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.LinkedList;
 import java.util.List;
 
 public class Mochila {
@@ -30,7 +31,7 @@ public class Mochila {
 
     public List<Item> getSortedItemList(String orderBy) {
         // Retorna um array de itens ordenado pelo valor decrescente
-        List<Item> sortedList = Arrays.asList(items.clone());
+        List<Item> sortedList = new LinkedList<Item>(Arrays.asList(items.clone()));
         if(orderBy.equals("valor")) {
             Collections.sort(sortedList, Comparator.comparingInt(Item::getValor));
         } else if(orderBy.equals("peso")) {
@@ -87,7 +88,8 @@ public class Mochila {
         int totalValor = 0;
         Item currentItem = itemList.get(0);
         while(currentPeso + currentItem.getPeso() <= this.capacidade) {
-            resultList.add(currentItem);            //itemList.remove(0);
+            resultList.add(currentItem);
+            itemList.remove(0);
             itemList = itemList.subList(1,itemList.size());
             currentPeso += currentItem.getPeso();
             totalValor += currentItem.getValor();
