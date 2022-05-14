@@ -7,7 +7,7 @@ public class Main {
     public static void main(String[] args) {
         int capacidadeMochila = 15, quantidadeItensAleatorios = 1;
 
-        //region Inicializacao de variaveis
+        // region Inicializacao de variaveis
         Item aleatorio = new Item();
         Item[] items = aleatorio.geradorDeItens(capacidadeMochila, quantidadeItensAleatorios);
         Mochila mochila = new Mochila(items, capacidadeMochila);
@@ -15,17 +15,13 @@ public class Main {
         Solucao solutionBruteForce;
         Solucao solutionGreedy;
 
-
-        int qtdExecucoesBrute = 0;
-        int itensBrute = 0;
         int itensGreedy = 20;
-        int qtdExecucoesGreedy = 0;
 
         long tempoInicial = 0;
         long tempoFinal = 0;
-        //endregion
+        // endregion
 
-        //region Parte 1
+        // region Parte 1
         System.out.println("\n1 - Quantidade de itens resolvidos em 4 segundos:\n");
 
         for (quantidadeItensAleatorios = 1; tempoFinal < 4; quantidadeItensAleatorios++) {
@@ -36,16 +32,16 @@ public class Main {
             tempoFinal = System.currentTimeMillis() - tempoInicial;
         }
 
-        System.out.println("Foi gerado uma quantidade de " + quantidadeItensAleatorios + " itens aleatorios dentro de "+ tempoFinal +" segundos\n");
+        System.out.println("Foi gerado uma quantidade de " + quantidadeItensAleatorios + " itens aleatorios dentro de "
+                + tempoFinal + " segundos\n");
 
-        //endregion
+        // endregion
 
-        //region Parte 2
-        
-        //Coloque a parte 2 aqui
+        // region Parte 2
 
-        //endregion
+        // Coloque a parte 2 aqui
 
+        // endregion
 
         mochila.exibir();
 
@@ -58,7 +54,7 @@ public class Main {
         for (int i = 0; i < 500; i++) {
             setItens = aleatorio.geradorDeItens(capacidadeMochila, itensGreedy);
             mochilaGreedy = mochilaBrute = new Mochila(setItens, capacidadeMochila);
-            //Mochila mochilaGreedy = new Mochila(itemsGreedy, capacidadeMochila);
+            // Mochila mochilaGreedy = new Mochila(itemsGreedy, capacidadeMochila);
             solutionBruteForce = mochilaBrute.resolverBruteForce();
             solutionGreedy = mochilaGreedy.resolverGreedy("valorPorPeso");
 
@@ -72,6 +68,5 @@ public class Main {
         System.out.println("Fim da execucao");
         System.out.println(setsIguais);
     }
-
 
 }
