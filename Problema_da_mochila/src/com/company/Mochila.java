@@ -12,6 +12,10 @@ public class Mochila {
     private Item[] items;
     private int capacidade;
 
+    public void setItems(Item[] items) {
+        this.items = items;
+    }
+
     public Mochila(Item[] items, int capacidade) {
         this.items = items;
         this.capacidade = capacidade;
