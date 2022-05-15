@@ -6,19 +6,20 @@ public class Main {
 
     public static void main(String[] args) {
 
-        // region Inicializacao de variaveis
+        // ================= INICIALIZANDO =================
         int MOCHILA_CAPACITY = 15;
         Item aleatorio = new Item();
         Solucao solutionBruteForce;
         Solucao solutionGreedy;
-        // endregion
+        // ======================= //
 
+
+        
         // ================= QUESTÃO A =================
         System.out.println("\n1 - Quantidade de itens resolvidos em 4 segundos:\n");
         int quantidadeItensAleatorios = 1;
         Item[] itemList1 = aleatorio.geradorDeItens(MOCHILA_CAPACITY, quantidadeItensAleatorios);
         Mochila mochilaItem1 = new Mochila(itemList1, MOCHILA_CAPACITY);
-
 
         long tempoInicial = 0;
         long tempoFinal = 0;
