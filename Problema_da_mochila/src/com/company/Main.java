@@ -10,19 +10,16 @@ public class Main {
         Solucao solutionBruteForce;
         Solucao solutionGreedy;
         //endregion ======================= //
-
-
         
         //region ================= QUESTÃO A =================
         System.out.println("\n1 - Quantidade de itens resolvidos em 4 segundos:\n");
         int quantidadeItensAleatorios = 1;
         Item[] itemList1 = aleatorio.geradorDeItens(MOCHILA_CAPACITY, quantidadeItensAleatorios);
         Mochila mochilaItem1 = new Mochila(itemList1, MOCHILA_CAPACITY);
-
-        long tempoInicial = 0;
+        long tempoInicial;
         long tempoFinal = 0;
 
-        for (quantidadeItensAleatorios = 1; tempoFinal < 4; quantidadeItensAleatorios++) {
+        for (quantidadeItensAleatorios = 1; tempoFinal < 4000; quantidadeItensAleatorios++) {
             itemList1 = aleatorio.geradorDeItens(MOCHILA_CAPACITY, quantidadeItensAleatorios);
             mochilaItem1.setItems(itemList1);
             tempoInicial = System.currentTimeMillis();
@@ -33,8 +30,6 @@ public class Main {
         System.out.println("Foi gerado uma quantidade de " + quantidadeItensAleatorios + " itens aleatorios dentro de "
                 + tempoFinal + " segundos\n");
         //endregion ======================= //
-
-
 
         //region  ================= QUESTÃO B =================
         System.out.println("\n2 - entre 500 iterações, quantidade de soluções iguais para greedy e brute force\n");
