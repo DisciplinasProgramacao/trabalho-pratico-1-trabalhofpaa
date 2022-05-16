@@ -6,16 +6,16 @@ public class Main {
 
     public static void main(String[] args) {
 
-        // ================= INICIALIZANDO =================
+        //region ================= INICIALIZANDO =================
         int MOCHILA_CAPACITY = 15;
         Item aleatorio = new Item();
         Solucao solutionBruteForce;
         Solucao solutionGreedy;
-        // ======================= //
+        //endregion ======================= //
 
 
         
-        // ================= QUESTÃO A =================
+        //region ================= QUESTÃO A =================
         System.out.println("\n1 - Quantidade de itens resolvidos em 4 segundos:\n");
         int quantidadeItensAleatorios = 1;
         Item[] itemList1 = aleatorio.geradorDeItens(MOCHILA_CAPACITY, quantidadeItensAleatorios);
@@ -24,7 +24,7 @@ public class Main {
         long tempoInicial = 0;
         long tempoFinal = 0;
 
-        for (quantidadeItensAleatorios = 1; tempoFinal < 4000; quantidadeItensAleatorios++) {
+        for (quantidadeItensAleatorios = 1; tempoFinal < 4; quantidadeItensAleatorios++) {
             itemList1 = aleatorio.geradorDeItens(MOCHILA_CAPACITY, quantidadeItensAleatorios);
             mochilaItem1.setItems(itemList1);
             tempoInicial = System.currentTimeMillis();
@@ -34,15 +34,16 @@ public class Main {
 
         System.out.println("Foi gerado uma quantidade de " + quantidadeItensAleatorios + " itens aleatorios dentro de "
                 + tempoFinal + " segundos\n");
-        // ======================= //
+        //endregion ======================= //
 
 
 
-        // ================= QUESTÃO B =================
+        //region  ================= QUESTÃO B =================
         System.out.println("\n2 - entre 500 iterações, quantidade de soluções iguais para greedy e brute force\n");
         Item[] itemList2;
         Mochila mochilaItem2;
-        int GREEDY_ITEM_COUNT = 20;
+        int GREEDY_ITEM_COUNT = quantidadeItensAleatorios;
+//        int GREEDY_ITEM_COUNT = 20;
 
         itemList2 = aleatorio.geradorDeItens(MOCHILA_CAPACITY, GREEDY_ITEM_COUNT);
         mochilaItem2 = new Mochila(itemList2, MOCHILA_CAPACITY);
@@ -62,7 +63,7 @@ public class Main {
         }
         System.out.println("\n");
         System.out.println("Fim da execucao, sets iguais no item 2: " + setsIguais);
-        // ======================= //
+        //endregion  ======================= //
     }
 
 }
